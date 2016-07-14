@@ -42,8 +42,7 @@ Public Function ipx(PictureFileName As String, TargetCell As Range)
             
     End With
     
-    Debug.Print l
-    
+
     With pix
         .Top = t
         .Left = l
