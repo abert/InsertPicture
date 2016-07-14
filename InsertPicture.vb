@@ -1,16 +1,18 @@
 'by Andy Bertagnoli
+'xlxbert@gmail.com
+'www.xlxbert.com
 'a function to insert images into cells with a formula call.
 
-Function InsertPicture(PictureFileName As String, TargetCell As Range)
+Public Function ipx(PictureFileName As String, TargetCell As Range)
 
     Dim tc As String
 
     tc = TargetCell.Address
 
-    Dim p As Object, t As Double, l As Double, w As Double, h As Double, PictureFileNamec As String, hgth As Integer, wdth As Integer
-     'change "C:\IMG\" to the location of your images
-	 PictureFileNamec = "C:\IMG\" & PictureFileName & ".jpg"
-    Debug.Print PictureFileNamec
+    Dim t As Double, l As Double, w As Double, h As Double, PictureFileNamec As String, hgth As Integer, wdth As Integer
+     'THIS IS IMPORTANT!!!!
+     'CHANGE "C:\IMG\" to the location of your images
+     PictureFileNamec = "C:\img\" & PictureFileName & ".jpg"
     If TypeName(ActiveSheet) <> "Worksheet" Then Exit Function
     If Dir(PictureFileNamec) = "" Then Exit Function
     
@@ -37,7 +39,10 @@ Function InsertPicture(PictureFileName As String, TargetCell As Range)
     With TargetCell
             t = .Top
             l = .Left
+            
     End With
+    
+    Debug.Print l
     
     With pix
         .Top = t
@@ -59,5 +64,3 @@ Function InsertPicture(PictureFileName As String, TargetCell As Range)
     
     
  End Function
-
-
